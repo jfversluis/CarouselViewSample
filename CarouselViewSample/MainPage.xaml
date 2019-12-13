@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="CarouselViewSample.MainPage">
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="100">
+        <CarouselView x:Name="TheCarousel">
+            <CarouselView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Hey...</x:String>
+                    <x:String>Psssst...!</x:String>
+                    <x:String>Did you check out...</x:String>
+                    <x:String>The awesome new CarouselView</x:String>
+                    <x:String>In Xamarin.Forms 4.4?!</x:String>
+                    <x:String>🎠 🎉</x:String>
+                </x:Array>
+            </CarouselView.ItemsSource>
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                        <Label Text="{Binding .}" HorizontalTextAlignment="Center" FontSize="Title" />
+                    </StackLayout>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+        <IndicatorView 
+          IndicatorColor="LightGray"
+          SelectedIndicatorColor="Black"
+          IndicatorSize="10" HorizontalOptions="Center"
+          IndicatorView.ItemsSourceBy="TheCarousel"/>
+    </StackLayout>
+</ContentPage>
